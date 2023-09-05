@@ -1,0 +1,3 @@
+1] [AccountService] - CRUD operations should be implemented with arrays implementation not ArrayList
+2] [AccountService] - Should code for interface, not implementation directly
+3] [Screenshots] - Screenshots should be uploaded as part of the project in PDF format
