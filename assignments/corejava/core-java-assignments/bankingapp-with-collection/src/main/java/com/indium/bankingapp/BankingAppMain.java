@@ -3,9 +3,9 @@ package com.indium.bankingapp;
 import com.indium.bankingapp.model.Account;
 import com.indium.bankingapp.service.AccountService;
 //import com.indium.bankingapp.service.AccountServiceArrListImpl;
-import com.indium.bankingapp.service.AccountServiceHashSetImpl;
+//import com.indium.bankingapp.service.AccountServiceHashSetImpl;
 //import com.indium.bankingapp.service.AccountServiceLinkedListImpl;
-//import com.indium.bankingapp.service.AccountServiceTreeSetImpl;
+import com.indium.bankingapp.service.AccountServiceTreeSetImpl;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,12 +18,12 @@ public class BankingAppMain {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Create instances of accountService
+
 //        AccountService accountService = new AccountService();
 //        AccountService accountService = new AccountServiceArrListImpl();
 //          AccountService accountService = new AccountServiceLinkedListImpl();
-        AccountService accountService = new AccountServiceHashSetImpl();
-//        AccountService accountService = new AccountServiceTreeSetImpl();
+//        AccountService accountService = new AccountServiceHashSetImpl();
+        AccountService accountService = new AccountServiceTreeSetImpl();
 
         boolean exit = false;
 
@@ -37,7 +37,7 @@ public class BankingAppMain {
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -65,7 +65,7 @@ public class BankingAppMain {
             }
         }
 
-        // Close the scanner
+
         scanner.close();
     }
     private static void displayAllAccounts(AccountService accountService) {
@@ -92,7 +92,7 @@ public class BankingAppMain {
         double balance = scanner.nextDouble();
         System.out.print("Enter Rate of Interest: ");
         double roi = scanner.nextDouble();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
 
         Account account = new Account(accountNumber, accountName,accountType, roi,balance);
         accountService.createAccount(account);
