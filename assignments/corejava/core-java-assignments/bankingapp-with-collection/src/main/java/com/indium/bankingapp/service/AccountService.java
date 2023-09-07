@@ -14,7 +14,7 @@ public interface AccountService {
 
     public boolean deleteAccount(String account);
     public Account getAccount(String str);
-    public List<Account> getAllAccounts();
+    public Set<Account> getAllAccounts();
 
 
 }

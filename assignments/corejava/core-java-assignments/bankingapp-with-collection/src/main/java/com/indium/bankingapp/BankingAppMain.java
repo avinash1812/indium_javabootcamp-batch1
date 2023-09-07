@@ -3,8 +3,8 @@ package com.indium.bankingapp;
 import com.indium.bankingapp.model.Account;
 import com.indium.bankingapp.service.AccountService;
 //import com.indium.bankingapp.service.AccountServiceArrListImpl;
-//import com.indium.bankingapp.service.AccountServiceHashSetImpl;
-import com.indium.bankingapp.service.AccountServiceLinkedListImpl;
+import com.indium.bankingapp.service.AccountServiceHashSetImpl;
+//import com.indium.bankingapp.service.AccountServiceLinkedListImpl;
 //import com.indium.bankingapp.service.AccountServiceTreeSetImpl;
 
 import java.util.List;
@@ -21,8 +21,8 @@ public class BankingAppMain {
         // Create instances of accountService
 //        AccountService accountService = new AccountService();
 //        AccountService accountService = new AccountServiceArrListImpl();
-          AccountService accountService = new AccountServiceLinkedListImpl();
-//        AccountService accountService = new AccountServiceHashSetImpl();
+//          AccountService accountService = new AccountServiceLinkedListImpl();
+        AccountService accountService = new AccountServiceHashSetImpl();
 //        AccountService accountService = new AccountServiceTreeSetImpl();
 
         boolean exit = false;
@@ -71,7 +71,7 @@ public class BankingAppMain {
     private static void displayAllAccounts(AccountService accountService) {
         if(!accountService.getAllAccounts().isEmpty()) {
             System.out.println("All Accounts:");
-            List<Account> allAccounts =accountService.getAllAccounts();
+            Set<Account> allAccounts =accountService.getAllAccounts();
             for (Account account : allAccounts) {
                 displayAccount(account);
             }
