@@ -5,8 +5,8 @@ import com.indium.bankingapp.service.AccountService;
 //import com.indium.bankingapp.service.AccountServiceArrListImpl;
 //import com.indium.bankingapp.service.AccountServiceHashSetImpl;
 //import com.indium.bankingapp.service.AccountServiceLinkedListImpl;
-import com.indium.bankingapp.service.AccountServiceHashMapImpl;
-//import com.indium.bankingapp.service.AccountServiceTreeMapImpl;
+//import com.indium.bankingapp.service.AccountServiceHashMapImpl;
+import com.indium.bankingapp.service.AccountServiceTreeMapImpl;
 //import com.indium.bankingapp.service.AccountServiceTreeSetImpl;
 
 import java.util.List;
@@ -27,8 +27,8 @@ public class BankingAppMain {
 //          AccountService accountService = new AccountServiceLinkedListImpl();
 //        AccountService accountService = new AccountServiceHashSetImpl();
 //        AccountService accountService = new AccountServiceTreeSetImpl();
-        AccountService accountService = new AccountServiceHashMapImpl();
-//        AccountService accountService = new AccountServiceTreeMapImpl();
+//        AccountService accountService = new AccountServiceHashMapImpl();
+        AccountService accountService = new AccountServiceTreeMapImpl();
 
         boolean exit = false;
 
