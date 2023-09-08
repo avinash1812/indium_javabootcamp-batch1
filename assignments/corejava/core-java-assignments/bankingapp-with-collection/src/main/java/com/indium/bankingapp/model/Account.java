@@ -1,6 +1,10 @@
 package com.indium.bankingapp.model;
 
 public class Account implements Comparable<Account>{
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
     private String accountNumber;
     private String accountName;
     private String accountType;
@@ -40,9 +44,9 @@ public class Account implements Comparable<Account>{
             System.out.println("Invalid amount for withdrawal or insufficient balance.");
         }
     }
-    public String getAccountNumber() {
-        return accountNumber;
-    }
+//    public Integer getAccountNumber() {
+//        return accountNumber;
+//    }
     @Override
     public int compareTo(Account o) {//going to compare current and given obj
 //            return this.id - o.id;//ascending

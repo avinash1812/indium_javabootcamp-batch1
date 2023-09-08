@@ -5,9 +5,12 @@ import com.indium.bankingapp.service.AccountService;
 //import com.indium.bankingapp.service.AccountServiceArrListImpl;
 //import com.indium.bankingapp.service.AccountServiceHashSetImpl;
 //import com.indium.bankingapp.service.AccountServiceLinkedListImpl;
-import com.indium.bankingapp.service.AccountServiceTreeSetImpl;
+import com.indium.bankingapp.service.AccountServiceHashMapImpl;
+//import com.indium.bankingapp.service.AccountServiceTreeMapImpl;
+//import com.indium.bankingapp.service.AccountServiceTreeSetImpl;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -23,7 +26,9 @@ public class BankingAppMain {
 //        AccountService accountService = new AccountServiceArrListImpl();
 //          AccountService accountService = new AccountServiceLinkedListImpl();
 //        AccountService accountService = new AccountServiceHashSetImpl();
-        AccountService accountService = new AccountServiceTreeSetImpl();
+//        AccountService accountService = new AccountServiceTreeSetImpl();
+        AccountService accountService = new AccountServiceHashMapImpl();
+//        AccountService accountService = new AccountServiceTreeMapImpl();
 
         boolean exit = false;
 
@@ -70,10 +75,13 @@ public class BankingAppMain {
     }
     private static void displayAllAccounts(AccountService accountService) {
         if(!accountService.getAllAccounts().isEmpty()) {
-            System.out.println("All Accounts:");
-            Set<Account> allAccounts =accountService.getAllAccounts();
-            for (Account account : allAccounts) {
-                displayAccount(account);
+            Map<String, Account> allAccounts = accountService.getAllAccounts();
+            for (Account acc : allAccounts.values()) {
+                System.out.println("Account Number: " + acc.getAccountNumber());
+                System.out.println("Account Holder name: "+acc.getAccountName());
+                System.out.println("Account Type: " + acc.getAccountType());
+                System.out.println("Balance: " + acc.getBalance());
+                System.out.println("Rate of Interest: "+acc.getRoi());
             }
         }
         else {
@@ -142,7 +150,7 @@ public class BankingAppMain {
         if (!deleted) {
             System.out.println("Account deleted successfully.");
         } else {
-            System.out.println("Account not found. inside else");
+            System.out.println("Account not found.");
         }
     }
 
