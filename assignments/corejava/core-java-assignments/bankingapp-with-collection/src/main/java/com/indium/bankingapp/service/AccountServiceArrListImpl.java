@@ -2,11 +2,7 @@ package com.indium.bankingapp.service;
 
 import com.indium.bankingapp.model.Account;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class AccountServiceArrListImpl implements AccountService {
 
@@ -78,17 +74,23 @@ public class AccountServiceArrListImpl implements AccountService {
 
         for (Account account : accounts) {
             String accountType = account.getAccountType();
+            Integer count = accountTypeCounts.get(accountType);
 
-            // If the account type is not already in the map, add it with a count of 1.
-            // If it's already in the map, increment the count.
-            accountTypeCounts.put(accountType, accountTypeCounts.getOrDefault(accountType, 0) + 1);
+            if (count == null) {
+                accountTypeCounts.put(accountType, 1);
+            } else {
+                accountTypeCounts.put(accountType, count + 1);
+            }
         }
 
-        // Sort the map by values in descending order
-        List<Map.Entry<String, Integer>> sortedAccountTypeCounts = accountTypeCounts.entrySet()
-                .stream()
-                .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
-                .collect(Collectors.toList());
+        List<Map.Entry<String, Integer>> sortedAccountTypeCounts = new ArrayList<>(accountTypeCounts.entrySet());
+
+        Collections.sort(sortedAccountTypeCounts, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
+                return e2.getValue().compareTo(e1.getValue());
+            }
+        });
 
         return sortedAccountTypeCounts;
     }
