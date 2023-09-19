@@ -1,0 +1,3 @@
+12345,Praveen,Savings,1.25,125000.0
+1999,Suji,Savings,1.9,700000.0
+1999,Suji,Savings,1.9,700000.0
