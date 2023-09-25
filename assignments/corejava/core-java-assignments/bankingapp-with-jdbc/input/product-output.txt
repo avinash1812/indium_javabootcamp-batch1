@@ -1,0 +1,6 @@
+1812,Avinash,Loan,1.8,128000.0
+1999,Suji,Savings,2.4,700000.0
+2222,Keerthana,Loan,11.0,450000.0
+3333,Abdul,Savings,2.9,705000.0
+12098,Rohit Deepu,Deposit,13.0,675000.0
+98765,Teja,Loan,4.3,350000.0
